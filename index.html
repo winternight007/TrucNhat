@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bảng trực nhật</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    td,
+    th {
+      border: 1px solid white;
+      padding: 15px;
+      min-width: 120px;
+    }
+
+    .name-list,
+    .class-list {
+      margin: 20px;
+    }
+
+    .name,
+    .student {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      border: 1px solid white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .name.selected,
+    .student.selected {
+      background: white;
+      color: black;
+      pointer-events: none;
+      /* ngăn không cho nhấn lại */
+    }
+
+    .focus {
+      background: darkblue !important;
+    }
+
+    button {
+      margin: 10px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid white;
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: white;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Bảng trực nhật từ Thứ 2 đến Thứ 6</h2>
+  <table>
+    <tr>
+      <th>Thứ 2</th>
+      <th>Thứ 3</th>
+      <th>Thứ 4</th>
+      <th>Thứ 5</th>
+      <th>Thứ 6</th>
+    </tr>
+    <tr>
+      <td id="thu2"></td>
+      <td id="thu3"></td>
+      <td id="thu4"></td>
+      <td id="thu5"></td>
+      <td id="thu6"></td>
+    </tr>
+  </table>
+
+  <!-- Nút điều khiển trái/phải -->
+  <div>
+    <button onclick="moveFocus(-1)">◀</button>
+    <button onclick="moveFocus(1)">▶</button>
+  </div>
+
+  <h2>Danh sách bàn</h2>
+  <div class="name-list">
+    <span class="name">Bàn Nga</span>
+    <span class="name">Bàn Bích Thảo</span>
+    <span class="name">Bàn Thư</span>
+    <span class="name">Bàn Tuấn Anh</span>
+    <span class="name">Bàn Hiếu</span>
+    <span class="name">Bàn Thanh Mai</span>
+    <span class="name">Bàn Bảo</span>
+    <span class="name">Bàn Hải Khánh</span>
+    <span class="name">Bàn Phi Hùng</span>
+    <span class="name">Bàn Quyên</span>
+    <span class="name">Bàn Tuệ Linh</span>
+    <span class="name">Bàn N.Vân Anh</span>
+    <span class="name">Bàn Trịnh Nhung</span>
+    <span class="name">Bàn Tr.Hương Giang</span>
+  </div>
+
+  <h2>Danh sách học sinh lớp</h2>
+  <div class="class-list">
+    <span class="student">Thảo Trang</span>
+    <span class="student">Bích Thảo</span>
+    <span class="student">Quốc Việt</span>
+    <span class="student">Long</span>
+    <span class="student">Huyền</span>
+    <span class="student">Thư</span>
+    <span class="student">Thái</span>
+    <span class="student">Ngô Dũng</span>
+    <span class="student">Hoàng Thảo</span>
+    <span class="student">Bách</span>
+    <span class="student">Mạnh</span>
+    <span class="student">Quốc Hùng</span>
+    <span class="student">Duy Linh</span>
+    <span class="student">Dưỡng</span>
+    <span class="student">Hiếu</span>
+    <span class="student">Tuấn Anh</span>
+    <span class="student">Tuấn Minh</span>
+    <span class="student">Mai</span>
+    <span class="student">Bảo Khánh</span>
+    <span class="student">Hoàng Minh</span>
+    <span class="student">Mai Trang</span>
+    <span class="student">Hạnh</span>
+    <span class="student">Bảo</span>
+    <span class="student">Trịnh Giang</span>
+    <span class="student">Trịnh Quân</span>
+    <span class="student">Đỗ Dũng</span>
+    <span class="student">Ngọc</span>
+    <span class="student">Khôi</span>
+    <span class="student">Nga</span>
+    <span class="student">Huy</span>
+    <span class="student">Hoàn</span>
+    <span class="student">Phong</span>
+    <span class="student">Lê Vân Anh</span>
+    <span class="student">Hải Khánh</span>
+    <span class="student">Đỗ Minh Anh</span>
+    <span class="student">Đức Anh</span>
+    <span class="student">Vũ Minh Anh</span>
+    <span class="student">Phi Hùng</span>
+    <span class="student">Hải</span>
+    <span class="student">Quyên</span>
+    <span class="student">Bách Việt</span>
+    <span class="student">Phùng Quân</span>
+    <span class="student">Vũ Nhung</span>
+    <span class="student">Tuệ Linh</span>
+    <span class="student">Vũ</span>
+    <span class="student">Trí Dũng</span>
+    <span class="student">Quyền Linh</span>
+    <span class="student">Nguyễn Vân Anh</span>
+    <span class="student">Duy Khánh</span>
+    <span class="student">Trần Giang</span>
+    <span class="student">Trịnh Nhung</span>
+    <span class="student">Nhật</span>
+    <span class="student">Diệu Linh</span>
+    <span class="student">Thắng</span>
+  </div>
+
+  <button onclick="resetTable()">Reset bảng</button>
+
+  <script>
+    const days = ["thu2", "thu3", "thu4", "thu5", "thu6"];
+    let currentIndex = 0;
+    let hidden = false; // đang ở ô ẩn hay không
+
+    function updateFocus() {
+      days.forEach(id => {
+        document.getElementById(id).classList.remove("focus");
+      });
+      if (!hidden) {
+        document.getElementById(days[currentIndex]).classList.add("focus");
+      }
+    }
+
+    function moveFocus(direction) {
+      if (!hidden) {
+        if (direction === 1 && currentIndex === days.length - 1) {
+          hidden = true; // từ Thứ 6 sang phải -> vào ô ẩn
+        } else {
+          currentIndex = (currentIndex + direction + days.length) % days.length;
+        }
+      } else {
+        if (direction === 1) {
+          currentIndex = 0; // từ ô ẩn sang phải -> về Thứ 2
+          hidden = false;
+        } else if (direction === -1) {
+          currentIndex = days.length - 1; // từ ô ẩn sang trái -> về Thứ 6
+          hidden = false;
+        }
+      }
+      updateFocus();
+    }
+
+    document.querySelectorAll(".name").forEach(name => {
+      name.addEventListener("click", () => {
+        if (!hidden) {
+          document.getElementById(days[currentIndex]).innerText = name.innerText;
+          name.classList.add("selected");
+          moveFocus(1); // auto sang ô tiếp theo
+        }
+      });
+    });
+
+    document.querySelectorAll(".student").forEach(student => {
+      student.addEventListener("click", () => {
+        if (!hidden) {
+          const cell = document.getElementById(days[currentIndex]);
+          if (cell.innerText.trim() === "") {
+            cell.innerText = student.innerText;
+          } else {
+            cell.innerText += ", " + student.innerText;
+          }
+          student.classList.add("selected");
+        }
+      });
+    });
+
+    function resetTable() {
+      days.forEach(id => {
+        document.getElementById(id).innerText = "";
+      });
+      document.querySelectorAll(".name, .student").forEach(el => el.classList.remove("selected"));
+      currentIndex = 0;
+      hidden = false;
+      updateFocus();
+    }
+
+    // Khởi tạo focus ban đầu
+    updateFocus();
+  </script>
+</body>
+
+</html>
+</script>
+</body>
+
+</html>
